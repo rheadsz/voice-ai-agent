@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "intent": {
+      "type": "string",
+      "enum": ["qualified", "maybe", "not_interested", "dnc"],
+      "description": "The detected seller intent: qualified (interested in selling), maybe (needs follow-up), not_interested (not selling), or dnc (do not call)"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Confidence score between 0 and 1 indicating how certain the AI is about the detected intent"
+    },
+    "phone": {
+      "type": "string",
+      "description": "The phone number of the person being called"
+    },
+    "owner_name": {
+      "type": "string",
+      "description": "The name of the property owner"
+    },
+    "address": {
+      "type": "string",
+      "description": "The property address being discussed"
+    }
+  },
+  "required": ["intent", "confidence"]
+}
